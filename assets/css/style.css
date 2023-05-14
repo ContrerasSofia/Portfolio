@@ -1,0 +1,287 @@
+/* set values communly use */
+:root {
+    --primary: #AC66F2;
+    --secondary: #63A644;
+    --dark: #0A0240;
+    --light: #f5f5f5;
+}
+
+body {
+    height: 100px;
+    width: 100%;
+}
+
+
+                    /***** HEADER *****/
+
+
+header {
+    background-color: var(--primary);
+    width: 100%;
+    padding: 1% 3% 1% 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+nav { 
+    /*making the nav var be in one line, have the same space between the links, and  1/3 the size of the title (horizontaly)*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-evenly;
+}
+
+nav a, #contact a {
+    
+    color: var(--light);
+    font-size:18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+                    /***** MAIN CONTENT *****/
+
+
+main {
+    /*For the sections to be in columns*/
+    display: flex;
+    flex-direction: column;
+}
+
+main section{
+    display:flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+    background-color: var(--dark);
+    color: var(--light);
+    flex-wrap: wrap;
+    padding: 5%;
+}
+
+main article, #contact {
+    flex: 0 0 77%;
+}
+
+.articleTittle {
+    flex: 0 0 20%;
+    flex-direction: column;
+    text-align: end;
+    border-right: 3px solid var(--secondary);
+    padding: 2%;
+
+}
+
+.articleTittle h2{
+    color: var(--light);
+    font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 32px;
+    font-weight: lighter;
+}
+
+.workImg {
+    object-fit: cover;
+    width:43%;
+    margin-top: 5%;
+    padding-left: 0;
+}
+
+
+
+/*About me section */
+
+#aboutMe p {
+    text-align: justify;
+    padding-left: 10%;
+    padding-top: 2.5%;
+    padding-right: 12.5%;
+    font-size: large;
+    line-height: 1.5;
+}
+
+/*My work section */
+
+#myWork {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#iotImg{
+    margin-top: 5%;
+}
+#iotImg img, .workImg img, .imgTittle{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+#iotImg:hover, .workImg:hover {
+    transform: scale(1.05);
+    transition: transform .2s;  
+}
+.workImg:hover .imgTittle {
+    margin-top: -15%;
+}
+
+article div img {
+width: 85%;
+margin-left: 7.5%;
+}
+
+h3,h4 {
+    display: inline;
+    color: antiquewhite;
+}
+h4 {
+   font-weight: lighter ;
+}
+.imgTittle {
+    display: flex;
+	width: fit-content;
+    background-color: black;
+    flex-direction: column;
+    padding: 1%;
+    margin-top: -7%;
+    margin-left: 2%;
+    position: absolute;
+    font-size:small;
+}
+
+#firstImg {
+    margin-left: 5%;
+}
+/* contact section */
+
+#contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#contact .contactLinks {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#contact .contactLinks img {
+    width: 30px;
+    margin-bottom: 4px;
+}
+
+                    /***** MAIN IMAGE *****/
+
+
+#mainImage {
+    display: flex;
+}
+
+#mainImage img {
+    width: 100%;
+    height: 30svh;
+}
+
+#mainImage div {
+    /*text inside the main image*/
+    position: absolute;
+    margin-top: 20svh;
+    margin-left: 80%;
+    color: var(--light);
+    font-size: 30px;
+    text-align: center;
+    font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+                    /***** MAIN TITTLE *****/
+
+
+#title {
+    color: var(--light);
+    font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 40px;
+    flex-grow: 3;
+    flex-direction: column;
+}
+
+
+                    /***** RESPONSIVE DESIGN *****/
+
+
+  /* Large smartphones*/
+  @media screen and (max-width: 768px) {
+    #mainImage div {
+        margin-left: 75%;
+    }   
+  }
+  
+  /* Small smartphones*/
+  @media screen and (max-width: 576px) {
+    /*elements goes in column*/
+    #title {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    nav {
+        margin: 3%;
+    }
+
+
+    main section{
+        flex-direction: column;
+        align-items: center;
+
+    }
+    /*delete right border*/
+    .articleTittle {
+        text-align: center;
+        border-bottom: 3px solid var(--secondary); 
+        border-right: none;  
+    }
+    /* the tittle in one line */
+    .articleTittle h2{
+        display: inline;
+    }
+
+    #mainImage div {
+        margin-left: 50%;
+    }
+     /*images goes in column*/
+    #myWork {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    /* making the images in one column + making them bigger*/
+    #iotImg, .workImg{
+        object-fit: cover;
+        width:86.5%;
+        margin-top: 5%;
+    }
+    #contact {
+        width: 100%;
+        justify-content: space-between;
+        margin:2%;
+    }
+    #contact .contactLinks{
+        padding-top: 2%;
+    }
+    #contact .contactLinks a{
+        font-size: small;
+    }   
+    .imgTittle, #firstImg{
+    margin-left: 5.5%;
+    margin-top: -15%;
+    }
+  }
+  
