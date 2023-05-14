@@ -14,8 +14,7 @@ You can access to the web page in:
 
 https://github.com/ContrerasSofia/Portfolio
 
-    ![screenShot](./assets/images/screenShot.png)
-
+   ![ScreenShot!](/assets/images/screenShot.png "ScreenShot")
 
 ## Process
 
